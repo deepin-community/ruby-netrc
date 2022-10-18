@@ -1,0 +1,19 @@
+From: Hideki Yamane <henrich@debian.org>
+Date: Thu, 3 Jan 2019 08:08:02 +0900
+Subject: avoid build test failure in non-homedir
+
+---
+ test/test_netrc.rb | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
+
+--- a/test/test_netrc.rb
++++ b/test/test_netrc.rb
+@@ -200,7 +200,7 @@
+   def test_missing_environment
+     nil_home = nil
+     ENV["HOME"], nil_home = nil_home, ENV["HOME"]
+-    assert_equal File.join(Dir.pwd, '.netrc'), Netrc.default_path
++    assert_equal File.join(Netrc.home_path, '.netrc'), Netrc.default_path
+   ensure
+     ENV["HOME"], nil_home = nil_home, ENV["HOME"]
+   end

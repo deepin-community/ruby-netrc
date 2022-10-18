@@ -1,0 +1,46 @@
+ruby-netrc (0.11.0-3) unstable; urgency=medium
+
+  * debian/patches
+    - add 0003-fix-test-failure-with-require_relative.patch
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 06 Jan 2019 18:22:39 +0900
+
+ruby-netrc (0.11.0-2) unstable; urgency=medium
+
+  * Team upload
+
+  * debian/control
+    - move Vcs-* to salsa.debian.org
+    - set Standards-Version: 4.3.0
+    - drop "Depends: ruby-interpreter" since we don't provide it anymore
+    - use dh12, set "Build-Depends: debhelper (>= 12), debhelper-compat (= 12)
+  * debian/compat
+    - drop it
+  * debian/watch
+    - update to use gemwatch.debian.net and version 4
+  * debian/patches
+    - add 0002-avoid-test-failure-in-non-homedir.patch (Closes: #906688)
+
+ -- Hideki Yamane <henrich@debian.org>  Thu, 03 Jan 2019 10:51:18 +0900
+
+ruby-netrc (0.11.0-1) unstable; urgency=medium
+
+  [ Cédric Boutillier ]
+  * Bump debhelper compatibility level to 9
+  * Use https:// in Vcs-* fields
+  * Use https:// in Vcs-* fields
+  * Bump Standards-Version to 3.9.7 (no changes needed)
+  * Run wrap-and-sort on packaging files
+
+  [ Lucas Nussbaum ]
+  * New upstream version 0.11.0
+  * Bump Standards-Version. No Changes needed.
+  * d/rules: refresh packaging
+
+ -- Lucas Nussbaum <lucas@debian.org>  Thu, 06 Jul 2017 21:19:56 +0200
+
+ruby-netrc (0.10.3-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Lucas Nussbaum <lucas@debian.org>  Tue, 05 May 2015 15:08:04 +0200

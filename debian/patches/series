@@ -1,0 +1,3 @@
+disable-test-depending-on-gpg.patch
+0002-avoid-test-failure-in-non-homedir.patch
+0003-fix-test-failure-with-require_relative.patch

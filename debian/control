@@ -1,0 +1,27 @@
+Source: ruby-netrc
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Lucas Nussbaum <lucas@debian.org>
+Build-Depends: debhelper (>= 12), debhelper-compat (= 12),
+               gem2deb,
+               rake
+Standards-Version: 4.3.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-netrc.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-netrc
+Homepage: https://github.com/geemus/netrc
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+
+Package: ruby-netrc
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Ruby library to read and write netrc files
+ This Ruby library can read and update netrc(5) files, preserving formatting
+ including comments and whitespace.
+ .
+ This package contains the 'netrc' library, not to be confused with the
+ 'net-netrc' library from the 'ruby-net-netrc' package.

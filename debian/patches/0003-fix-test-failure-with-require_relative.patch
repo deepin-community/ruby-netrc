@@ -1,0 +1,49 @@
+From: Hideki Yamane <henrich@debian.org>
+Date: Sun, 6 Jan 2019 18:17:55 +0900
+Subject: fix test failure with require_relative
+
+---
+ test/test_lex.rb   | 2 +-
+ test/test_netrc.rb | 2 +-
+ test/test_parse.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/test/test_lex.rb b/test/test_lex.rb
+index e63ff1d..65b2d50 100644
+--- a/test/test_lex.rb
++++ b/test/test_lex.rb
+@@ -1,7 +1,7 @@
+ $VERBOSE = true
+ require 'minitest/autorun'
+ 
+-require File.expand_path("#{File.dirname(__FILE__)}/../lib/netrc")
++require_relative "../lib/netrc"
+ 
+ class TestLex < Minitest::Test
+   def test_lex_empty
+diff --git a/test/test_netrc.rb b/test/test_netrc.rb
+index 7601c08..f994b30 100644
+--- a/test/test_netrc.rb
++++ b/test/test_netrc.rb
+@@ -2,7 +2,7 @@ $VERBOSE = true
+ require 'minitest/autorun'
+ require 'fileutils'
+ 
+-require File.expand_path("#{File.dirname(__FILE__)}/../lib/netrc")
++require_relative "../lib/netrc"
+ require "rbconfig"
+ 
+ class TestNetrc < Minitest::Test
+diff --git a/test/test_parse.rb b/test/test_parse.rb
+index 9e61c69..4162d4d 100644
+--- a/test/test_parse.rb
++++ b/test/test_parse.rb
+@@ -1,7 +1,7 @@
+ $VERBOSE = true
+ require 'minitest/autorun'
+ 
+-require File.expand_path("#{File.dirname(__FILE__)}/../lib/netrc")
++require_relative "../lib/netrc"
+ 
+ class TestParse < Minitest::Test
+   def test_parse_empty
